@@ -16,37 +16,37 @@ public class RadioDemo {
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get(url);
-		WebElement maleRadioB = driver.findElement(By.xpath("//input[@id='sex-0']"));
-
-		System.out.println(maleRadioB.getAttribute("class"));
-		
-		System.out.println(maleRadioB.isDisplayed());// true
-		System.out.println(maleRadioB.isEnabled());// true
-		System.out.println("Radio Btn is Selected:: " + maleRadioB.isSelected());// false
-		System.out.println("**********");
-
-		// first way to click on a Radio Button
-		maleRadioB.click();
-		System.out.println("Radio Btn is Selected:: " + maleRadioB.isSelected());// true
+//		WebElement maleRadioB = driver.findElement(By.xpath("//input[@id='sex-0']"));
+//
+//		System.out.println(maleRadioB.getAttribute("class"));
+//		
+//		System.out.println(maleRadioB.isDisplayed());// true
+//		System.out.println(maleRadioB.isEnabled());// true
+//		System.out.println("Radio Btn is Selected:: " + maleRadioB.isSelected());// false
+//		System.out.println("**********");
+//
+//		// first way to click on a Radio Button
+//		maleRadioB.click();
+//		System.out.println("Radio Btn is Selected:: " + maleRadioB.isSelected());// true
 
 		// second way to click on Radio buttons
-		List<WebElement> proList = driver.findElements(By.xpath("//input[@name='profession']"));
+		List<WebElement> proList = driver.findElements(By.xpath("//input[@name='gender']"));
 
 		int listSize = proList.size();
 		System.out.println("Size of CheckBoxes are:: " + listSize);
 
-		String valueToBeSelected="Manual Tester";
+		String valueToBeSelected="Male";
 		//driver.findElement(By.xpath("//input[@id='sex-0']")).getAttribute("value");
-		for (WebElement profession : proList) {
+		for (WebElement pro : proList) {
 
-			if(profession.isEnabled()) {//Checking if the check-box is enabled
+			if(pro.isEnabled()) {//Checking if the check-box is enabled
 				
-				String value=profession.getAttribute("value");//get value of value attribute
+				String value=pro.getAttribute("value");//get value of value attribute
 				
 				System.out.println(value);
 				
 				if(value.equals(valueToBeSelected)) {
-					profession.click();
+					pro.click();
 					break;
 				}
 				

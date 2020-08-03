@@ -23,7 +23,7 @@ public class ExplicitWait {
 		 * The explicit wait is used to tell the Web Driver to wait for certain conditions 
 		 * (Expected Conditions) or the maximum time exceeded before throwing an 
 		 * "ElementNotVisibleException". Explicit wait works with ExpectedConditionsClass 
-		 * and wait untill condition becomes true or max amount of time is reached.
+		 * and wait until condition becomes true or max amount of time is reached.
 		 */
 
 		WebDriverWait wait=new WebDriverWait(driver, 20);
@@ -36,6 +36,9 @@ public class ExplicitWait {
 		
 		driver.quit();	
 
+		
+		
+		
 	}
 
 }

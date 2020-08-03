@@ -25,6 +25,7 @@ public class WindowHandleWithLoop {
 		
 		Set<String> allWindowHandles = driver.getWindowHandles();
 		
+		
 		for (String handle : allWindowHandles) {
 			System.out.println("Id Of the Window:: "+handle);
 			driver.switchTo().window(handle);
